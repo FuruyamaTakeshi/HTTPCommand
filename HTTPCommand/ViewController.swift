@@ -13,6 +13,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        let yahooGetCommand = YahooGetCommand()
+        let batchCommand = SerialSendCommand()
+        
+        batchCommand.add(yahooGetCommand)
+        batchCommand.execute()
+        
     }
 
     override func didReceiveMemoryWarning() {
